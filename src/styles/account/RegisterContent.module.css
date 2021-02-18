@@ -1,0 +1,40 @@
+.container{
+    min-width: 410px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.content{
+    font-size: 18px;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+.input{
+    outline: none;
+    border: 2px solid #e4e4e4;
+    font-size: 16px;
+    color: #8f8e8e;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.input:focus{
+    border: 2px solid #6e45a5;
+    color: #6e45a5;
+}
+
+.label{
+
+}
+
+.img{
+
+}

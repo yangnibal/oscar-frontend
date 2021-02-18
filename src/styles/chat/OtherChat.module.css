@@ -1,0 +1,17 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.message_wrapper{
+    border-radius: 10px;
+    border-bottom-left-radius: 0;
+    background-color: #e4e4e4;
+    margin-bottom: 5px;
+}
+
+.message{
+    color: #6e45a5;
+    padding: 8px 12px;
+}

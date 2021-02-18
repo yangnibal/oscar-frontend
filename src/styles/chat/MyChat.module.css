@@ -1,0 +1,18 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.message_wrapper{
+    border-radius: 10px;
+    border-bottom-right-radius: 0;
+    background-color: #6e45a5;
+    margin-bottom: 5px;
+    width: fit-content;
+}
+
+.message{
+    color: #ffffff;
+    padding: 8px 12px;
+}

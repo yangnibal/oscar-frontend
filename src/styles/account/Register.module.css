@@ -1,0 +1,57 @@
+.container{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.register_container{
+    height: 510px;
+    width: 410px;
+    box-shadow: 0 0px 15px 0 rgba(23, 26, 29, 0.15);
+    margin-right: 200px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.register_content_show_wrapper{
+    width: 410px;
+    overflow: hidden;
+}
+
+.register_content_wrapper{
+    display: flex;
+    overflow: hidden;
+    transition: all .5s ease-in-out;
+    position: relative;
+    width: calc(410px * 510);
+}
+
+.register_button_wrapper{
+    display: flex;
+    width: 200%;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.process_0{
+    right: 0px;
+}
+.process_1{
+    right: 410px;
+}
+.process_2{
+    right: calc(410px * 2);
+}
+.process_3{
+    right: calc(410px * 3);
+}
+.process_4{
+    right: calc(410px * 4);
+}

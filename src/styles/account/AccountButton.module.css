@@ -1,0 +1,25 @@
+.container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 15px;
+    background: linear-gradient(to right, #6e45a5 50%, #ffffff 50%);
+    background-size: 200% auto;
+    background-position: right bottom;
+    transition: all .5s ease-in-out;
+    margin: 10px 0;
+}
+
+.container:hover{
+    background-color: #6e45a5;
+    color: #ffffff;
+    background-position: left bottom;
+}  
+
+.label{
+    font-size: 16px;
+    padding: 15px 0;
+    position: relative;
+}
