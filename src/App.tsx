@@ -6,6 +6,7 @@ import Chat from './pages/chat'
 import { RecoilRoot } from 'recoil';
 import Login from './pages/account/Login';
 import Register from './pages/account/Register';
+import Contact from './pages/contact';
 
 function App() {
 	return (
@@ -13,6 +14,7 @@ function App() {
 			<BrowserRouter>
 				<Switch>
 					<Route exact path="/chat" component={Chat}/>
+					<Route exact path="/contact" component={Contact}/>
 					<Route exact path="/account/login" component={Login}/>
 					<Route exact path="/account/register" component={Register}/>
 				</Switch>

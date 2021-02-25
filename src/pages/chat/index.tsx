@@ -10,26 +10,14 @@ import { myUserData } from '../../store/myData'
 import withAuthRequest from '../../hocs/withAuthRequest'
 import WebSocketInstance from '../../api/WebSocket'
 import { currentRoomId } from '../../store/currentState'
-
-const messages = [
-    {
-        content: "안녕하세요",
-        id: 1,
-        authorId: 2,
-        createdAt: ""
-    },
-    {
-        content: "안녕하세요",
-        id: 2,
-        authorId: 1,
-        createdAt: ""
-    },
-]
+import AddChatRoomModal from '../../components/chat/AddChatRoomModal'
+import Plus from '../../assets/plus.svg'
 
 function Chat(){
 
     const [ chatList, setChatList ] = useState<ChatRoom[]>([])
     const [ messages, setMessages ] = useState<ChatMessage[]>([])
+    const [ isAddChatRoomModalOn, setIsAddChatRoomModalOn ] = useState(false)
 
     const [ myData ] = useRecoilState(myUserData)
     const [ roomId, setRoomId ] = useRecoilState(currentRoomId)
@@ -65,6 +53,10 @@ function Chat(){
         })
     }
 
+    const onClickAddChatRoom = () => {
+        setIsAddChatRoomModalOn(isAddChatRoomModalOn => !isAddChatRoomModalOn)
+    }
+
     useEffect(() => {
         Get({
             endpoint: "rooms/my/",
@@ -77,13 +69,17 @@ function Chat(){
 
     return (
         <Layout>
+            {isAddChatRoomModalOn && <AddChatRoomModal setModalHide={onClickAddChatRoom}/>}
             <div className={styles.container}>
                 <div className={styles.list_container}>
                     <div className={styles.top_wrapper}>
-                        <div className={styles.title}>채팅</div>
+                        <div className={styles.title}>Chats</div>
+                        <div className={styles.plus_img_wrapper} onClick={onClickAddChatRoom}>
+                            <img src={Plus} alt="" className={styles.plus_img}/>
+                        </div>
                     </div>
                     <div className={styles.search_input_wrapper}>
-                        <input className={styles.search_input} placeholder="연락처를 검색해주세요..."/>
+                        <input className={styles.search_input} placeholder="Search Contact..."/>
                     </div>
                     <div className={styles.list}>
                         {chatList.map((el: ChatRoom, index: number) => (

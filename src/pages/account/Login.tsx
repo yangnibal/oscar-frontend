@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import { Post } from '../../api'
 import AccountButton from '../../components/account/AccountButton'
 import LoginInput from '../../components/account/LoginInput'
 import useInputs from '../../hooks/useInputs'
@@ -17,16 +18,35 @@ function Login(){
 
     const [ inputValues ] = useState<DefaultInputType[]>([
         {
-            placeholder: "type your email...",
+            placeholder: "Type your email...",
             name: "email",
             type: "email"
         },
         {
-            placeholder: "type your password...",
+            placeholder: "Type your password...",
             name: "password",
             type: "password"
         }
     ])
+
+    const onClickLogin = () => {
+
+        let formData = new FormData()
+        formData.append("email", input.email)
+        formData.append("password", input.password)
+
+        Post({
+            endpoint: "users/login/",
+            data: formData,
+            onSuccess: (res) => {
+                localStorage.setItem("token", res.data.token)
+                history.push("/chat")
+            },
+            onFailure: (err) => {
+                console.log(err)
+            }
+        })
+    }
 
     return(
         <div className={styles.container}>
@@ -39,7 +59,7 @@ function Login(){
                         onChange={onChange}
                     />
                 ))}
-                <AccountButton label={"log in"}/>
+                <AccountButton label={"log in"} onClick={onClickLogin}/>
                 <AccountButton label={"sign in with google"}/>
                 <AccountButton label={"have no account? sign up now"} onClick={() => history.push("/account/register")}/>
             </div>

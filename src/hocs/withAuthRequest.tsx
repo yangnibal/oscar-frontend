@@ -16,7 +16,6 @@ const withAuthRequest = (Component: React.ComponentType<any>) => ({...props}) =>
             Get({
                 endpoint: "users/me/",
                 onSuccess: (res) => {
-                    console.log(res)
                     setMyData({...res.data})
                 },
                 onFailure: (err) => {

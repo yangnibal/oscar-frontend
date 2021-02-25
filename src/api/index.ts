@@ -2,6 +2,7 @@ import axios from 'axios'
 import { GetMethodProps, HttpErrorType, HttpResponseType, PostMethodProps } from '../types'
 
 export const defaultUrl = "http://localhost:8000/"
+export const defaultMediaUrl = "http://localhost:8000/media"
 export const defaultSocketUrl = "ws://localhost:8000/ws/"
 
 export const getToken = () => {
@@ -10,11 +11,11 @@ export const getToken = () => {
 }
 
 export const Get = (props: GetMethodProps) => {
-    axios.get(defaultUrl+props.endpoint, {
+    axios.get(defaultUrl+props.endpoint, getToken() ? {
         headers: {
             Authorization: `Token ${getToken()}`
         }
-    })
+    } : {})
     .then((res: HttpResponseType) => {
         props.onSuccess(res)
     })
@@ -24,11 +25,11 @@ export const Get = (props: GetMethodProps) => {
 }
 
 export const Post = (props: PostMethodProps) => {
-    axios.post(defaultUrl+props.endpoint, props.data, {
+    axios.post(defaultUrl+props.endpoint, props.data, getToken() ? {
         headers: {
             Authorization: `Token ${getToken()}`
         }
-    })
+    } : {})
     .then((res: HttpResponseType) => {
         props.onSuccess(res)
     })
@@ -38,11 +39,11 @@ export const Post = (props: PostMethodProps) => {
 }
 
 export const Put = (props: PostMethodProps) => {
-    axios.put(defaultUrl+props.endpoint, props.data, {
+    axios.put(defaultUrl+props.endpoint, props.data, getToken() ? {
         headers: {
             Authorization: `Token ${getToken()}`
         }
-    })
+    } : {})
     .then((res: HttpResponseType) => {
         props.onSuccess(res)
     })
@@ -52,11 +53,11 @@ export const Put = (props: PostMethodProps) => {
 }
 
 export const Patch = (props: PostMethodProps) => {
-    axios.patch(defaultUrl+props.endpoint, props.data, {
+    axios.patch(defaultUrl+props.endpoint, props.data, getToken() ? {
         headers: {
             Authorization: `Token ${getToken()}`
         }
-    })
+    } : {})
     .then((res: HttpResponseType) => {
         props.onSuccess(res)
     })
@@ -66,11 +67,11 @@ export const Patch = (props: PostMethodProps) => {
 }
 
 export const Delete = (props: GetMethodProps) => {
-    axios.delete(defaultUrl+props.endpoint, {
+    axios.delete(defaultUrl+props.endpoint, getToken() ? {
         headers: {
             Authorization: `Token ${getToken()}`
         }
-    })
+    } : {})
     .then((res: HttpResponseType) => {
         props.onSuccess(res)
     })

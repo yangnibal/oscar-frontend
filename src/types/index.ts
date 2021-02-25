@@ -46,3 +46,11 @@ export interface DefaultInputType {
     onChange?: () => void
     type?: string
 }
+
+export interface User {
+    name: string
+    email: string
+    username: string
+    id: number
+    profile_img: string | null
+}
