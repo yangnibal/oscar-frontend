@@ -1,9 +1,9 @@
 import axios from 'axios'
 import { GetMethodProps, HttpErrorType, HttpResponseType, PostMethodProps } from '../types'
 
-export const defaultUrl = "http://localhost:8000/"
-export const defaultMediaUrl = "http://localhost:8000/media"
-export const defaultSocketUrl = "ws://localhost:8000/ws/"
+export const defaultUrl = "http://15.165.237.185:8000/"
+export const defaultMediaUrl = "http://15.165.237.185:8000/media"
+export const defaultSocketUrl = "ws://15.165.237.185:8000/ws/"
 
 export const getToken = () => {
     const token = localStorage.getItem("token")
