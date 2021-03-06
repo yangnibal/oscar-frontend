@@ -54,3 +54,9 @@ export interface User {
     id: number
     profile_img: string | null
 }
+
+export type DateType = {
+    date: string
+    day: string
+    id?: string
+}

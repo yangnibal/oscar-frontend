@@ -1,17 +1,18 @@
 .container{
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
 }
 
 .message_wrapper{
     border-radius: 10px;
-    border-bottom-left-radius: 0;
-    background-color: #e4e4e4;
+    border-bottom-right-radius: 0;
+    background-color: #6e45a5;
     margin-bottom: 5px;
+    width: fit-content;
 }
 
 .message{
-    color: #6e45a5;
+    color: #ffffff;
     padding: 8px 12px;
 }

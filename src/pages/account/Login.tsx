@@ -59,9 +59,17 @@ function Login(){
                         onChange={onChange}
                     />
                 ))}
-                <AccountButton label={"log in"} onClick={onClickLogin}/>
-                <AccountButton label={"sign in with google"}/>
-                <AccountButton label={"have no account? sign up now"} onClick={() => history.push("/account/register")}/>
+                <AccountButton 
+                    label={"log in"} 
+                    onClick={onClickLogin}
+                />
+                <AccountButton 
+                    label={"sign in with google"}
+                />
+                <AccountButton 
+                    label={"have no account? sign up now"} 
+                    onClick={() => history.push("/account/register")}
+                />
             </div>
         </div>
     )

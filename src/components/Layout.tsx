@@ -19,6 +19,10 @@ const Layout: React.FC = ({children}, props: RouteComponentProps) => {
         {
             content: "Contact",
             to: "/contact"
+        },
+        {
+            content: "Calendar",
+            to: "/calendar"
         }
     ])
     const [ selectedSidebar, setSelectedSidebar ] = useState<string>("")

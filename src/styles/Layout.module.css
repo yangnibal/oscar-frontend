@@ -34,7 +34,16 @@
     cursor: pointer;
     border-right: 1px solid #e4e4e4;
     margin: 0px 1px;
-    transition: all .5s ease-in-out;
+}
+
+.sidebar_content:hover::after{
+    transform: scaleY(1);
+}
+
+.sidebar_content::after{
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: all 300ms .5s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .sidebar_content__selected{
